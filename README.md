@@ -99,8 +99,8 @@ python app.py
 Access the app at `http://127.0.0.1:5000/`.
 
 ## Results
--**Test Accuracy**: Achieved high accuracy on the test set.
--**Confusion Matrix**: Provides insights into misclassified categories.
+- **Test Accuracy**: Achieved high accuracy on the test set.
+- **Confusion Matrix**: Provides insights into misclassified categories.
 
 ## Conclusion
 This project demonstrates the effectiveness of deep learning in classifying flower species from images. The model provides accurate predictions, and the Flask web application offers a user-friendly interface for deployment.
