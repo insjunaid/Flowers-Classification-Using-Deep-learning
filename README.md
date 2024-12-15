@@ -60,6 +60,7 @@ Install dependencies using:
 ```bash
 pip install -r requirements.txt
 
+```
 ## Model Architecture
 The model is based on EfficientNet-B0, pretrained on ImageNet. The classifier head is modified as follows:
 
