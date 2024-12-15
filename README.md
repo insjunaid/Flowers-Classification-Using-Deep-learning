@@ -80,6 +80,24 @@ Training data is augmented with transformations including:
 - Color Jitter
 - Normalization (mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 
+## Evaluation
+
+### Confusion Matrix
+A confusion matrix is plotted to analyze performance across the 17 flower classes.
+
+### Classification Report
+The classification report includes precision, recall, and F1-score for each class.
+
+## Web Application
+The Flask application allows users to upload flower images and receive predictions. Features include:
+- Displaying the predicted flower class
+- Returning the uploaded image alongside the prediction
+
+Run the Flask app:
+```bash
+python app.py
+
+
 ### Training Script
 Key features of the training script:
 - Early stopping with a patience of 4 epochs
