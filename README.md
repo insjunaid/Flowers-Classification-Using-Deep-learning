@@ -1,5 +1,5 @@
 # Flower Classification Using Deep Learning
-
+![Screenshot 2024-12-15 173452](https://github.com/user-attachments/assets/11c6dc20-8b31-4a0f-b516-97537ad6e2d4)
 
 This repository contains a PyTorch-based implementation for classifying flower images into 17 categories. The project utilizes a pre-trained EfficientNet-B0 model fine-tuned for flower classification, and it also provides a Flask web application where users can upload images to obtain predictions.
 
