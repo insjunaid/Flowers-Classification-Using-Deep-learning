@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Classification</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('static/bkc.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .upload-box {
+            border: 3px dashed #fff;
+            padding: 40px;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s ease;
+        }
+        .upload-box:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .file-label {
+            font-size: 18px;
+            padding: 15px 30px;
+            background-color: #008CBA;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .file-label:hover {
+            background-color: #005f73;
+            transform: scale(1.05);
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.05);
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 30px;
+        }
+        .result img {
+            max-width: 300px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        a {
+            color: #f2f2f2;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 15px;
+            padding: 10px 20px;
+            background-color: #333;
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload Flower Image for Classification</h1>
+        <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+            <!-- Drag and Drop Container -->
+            <div class="upload-box" id="drop-zone" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <label for="file" class="file-label">Click or Drag & Drop to Upload</label>
+                <input type="file" name="file" id="file" required>
+            </div>
+            <button type="submit" style="margin-top: 20px;">Predict</button>
+        </form>
+
+        {% if filename %}
+        <div class="result">
+            <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Flower Image">
+            <h3>Predicted Class: {{ label }}</h3>
+            <a href="{{ url_for('index') }}">Upload Another Image</a>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        // Allow the drag and drop functionality
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            var files = event.dataTransfer.files;
+            document.getElementById('file').files = files;
+        }
+
+        // Optional: Style changes on drag and drop (optional)
+        var dropZone = document.getElementById('drop-zone');
+        dropZone.addEventListener('dragenter', function(e) {
+            dropZone.style.backgroundColor = '#444';
+        });
+
+        dropZone.addEventListener('dragleave', function(e) {
+            dropZone.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        });
+    </script>
+</body>
+</html>
