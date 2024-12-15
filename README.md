@@ -16,7 +16,6 @@ This repository contains a PyTorch-based implementation for classifying flower i
   - [Classification Report](#classification-report)
 - [Web Application](#web-application)
 - [Results](#results)
-- [Installation](#installation)
 - [Conclusion](#conclusion)
 
 ## Introduction
@@ -96,11 +95,17 @@ The Flask application allows users to upload flower images and receive predictio
 Run the Flask app:
 ```bash
 python app.py
+```
+Access the app at `http://127.0.0.1:5000/`.
 
+## Results
+-**Test Accuracy**: Achieved high accuracy on the test set.
+-**Confusion Matrix**: Provides insights into misclassified categories.
 
-### Training Script
-Key features of the training script:
-- Early stopping with a patience of 4 epochs
-- Cross-entropy loss
-- Adam optimizer with learning rate scheduler
+## Conclusion
+This project demonstrates the effectiveness of deep learning in classifying flower species from images. The model provides accurate predictions, and the Flask web application offers a user-friendly interface for deployment.
+
+Contributors
+
+Junaid Shariff
 
