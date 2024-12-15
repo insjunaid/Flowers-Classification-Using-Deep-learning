@@ -69,3 +69,20 @@ nn.Linear(in_features, 512)
 ReLU()
 Dropout(0.4)
 nn.Linear(512, 17)
+```
+## Training
+
+### Data Augmentation
+Training data is augmented with transformations including:
+- Random Resized Crop
+- Horizontal Flip
+- Random Rotation
+- Color Jitter
+- Normalization (mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+
+### Training Script
+Key features of the training script:
+- Early stopping with a patience of 4 epochs
+- Cross-entropy loss
+- Adam optimizer with learning rate scheduler
+
