@@ -10,7 +10,6 @@ This repository contains a PyTorch-based implementation for classifying flower i
 - [Model Architecture](#model-architecture)
 - [Training](#training)
   - [Data Augmentation](#data-augmentation)
-  - [Training Script](#training-script)
 - [Evaluation](#evaluation)
   - [Confusion Matrix](#confusion-matrix)
   - [Classification Report](#classification-report)
